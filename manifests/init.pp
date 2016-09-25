@@ -3,7 +3,7 @@
 # This module manages VirtualBox
 #
 class virtualbox (
-  $major        = '4.2',
+  $major        = '5.0',
   $vboxweb_user = 'vbox',
   $vboxweb_host = '127.0.0.10',
 ) {
