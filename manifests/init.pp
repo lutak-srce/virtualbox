@@ -1,4 +1,5 @@
-# Class: virtualbox
+#
+# = Class: virtualbox
 #
 # This module manages VirtualBox
 #
@@ -8,10 +9,6 @@ class virtualbox (
   $vboxweb_host = '127.0.0.10',
 ) {
   require admintools::buildchain
-
-  if $vboxweb_user == 'vbox' {
-    require virtualbox::user
-  }
 
   File {
     ensure => file,
@@ -24,6 +21,10 @@ class virtualbox (
     ensure => present,
     alias  => 'VirtualBox',
     name   => "VirtualBox-${major}",
+  }
+
+  if $vboxweb_user == 'vbox' {
+    include virtualbox::user
   }
 
   file { '/etc/init.d/vboxdrv':

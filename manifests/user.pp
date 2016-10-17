@@ -20,6 +20,7 @@ class virtualbox::user (
     shell      => '/bin/bash',
     groups     => ['vboxusers','disk'],
     comment    => 'VirtualBox system user',
+    require    => Package['virtualbox'],
   }
 
 # /usr/bin/VBoxManage setproperty websrvauthlibrary null
