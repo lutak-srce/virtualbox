@@ -4,7 +4,7 @@
 # This module manages VirtualBox
 #
 class virtualbox (
-  $version = '5.1',
+  $version = '5.2',
   $license = '_please_create_license_',
 ) {
 
